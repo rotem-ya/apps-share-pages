@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Does your child already know the answer?</title>
+  <meta name="description" content="A fun and educational trivia game for little kids" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ask The Kids English" />
+  <meta property="og:title" content="Does your child already know the answer?" />
+  <meta property="og:description" content="A fun and educational trivia game for little kids" />
+  <meta property="og:url" content="https://rotem-ya.github.io/apps-share-pages/askthekids/en/" />
+  <meta property="og:image" content="https://rotem-ya.github.io/apps-share-pages/assets/share-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Does your child already know the answer?" />
+  <meta name="twitter:description" content="A fun and educational trivia game for little kids" />
+  <meta name="twitter:image" content="https://rotem-ya.github.io/apps-share-pages/assets/share-image.jpg" />
+
+  <style>
+    :root {
+      --bg1: #fff7e8;
+      --bg2: #f4f8ff;
+      --card: rgba(255,255,255,0.82);
+      --text: #16324f;
+      --muted: #5d7287;
+      --accent: #ff9800;
+      --accent2: #1e88e5;
+      --shadow: 0 18px 40px rgba(22,50,79,0.14);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, #ffe3a6 0, transparent 28%),
+        radial-gradient(circle at top left, #d9ecff 0, transparent 30%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .hero {
+      padding: 20px 20px 8px;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+    .content {
+      padding: 18px 22px 24px;
+      text-align: center;
+    }
+    h1 {
+      margin: 8px 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+    p {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      margin: 14px 0 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(30,136,229,0.08);
+      color: var(--accent2);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .buttons {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn {
+      display: block;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ffb74d);
+      color: white;
+      box-shadow: 0 10px 20px rgba(255,152,0,0.28);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--accent2);
+      border: 1px solid rgba(30,136,229,0.18);
+    }
+    .note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #7a8da0;
+    }
+  </style>
+
+  <script>
+    const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.askthekids.english";
+    const IOS_URL = "https://apps.apple.com/app/ask-the-kids-english/id6760966175";
+
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function redirectToStore() {
+      if (isAndroid()) {
+        window.location.replace(ANDROID_URL);
+        return;
+      }
+      if (isIOS()) {
+        window.location.replace(IOS_URL);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(redirectToStore, 900);
+    });
+  </script>
+</head>
+<body>
+  <main class="card">
+    <div class="hero">
+      <img src="https://rotem-ya.github.io/apps-share-pages/assets/share-image.jpg" alt="Ask The Kids English" />
+    </div>
+
+    <div class="content">
+      <div class="badge">Ask The Kids English</div>
+      <h1>Does your child already know the answer?</h1>
+      <p>A fun and educational trivia game for little kids. Learn, play, and enjoy together.</p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.askthekids.english">Download for Android</a>
+        <a class="btn btn-secondary" href="https://apps.apple.com/app/ask-the-kids-english/id6760966175">Download for iPhone</a>
+      </div>
+
+      <div class="note">If you were not redirected automatically, choose your store.</div>
+    </div>
+  </main>
+</body>
+</html>
