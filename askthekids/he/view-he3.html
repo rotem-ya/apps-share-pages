@@ -1,53 +1,305 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>הילד שלך כבר יודע את התשובה?</title>
-  <meta name="description" content="טריוויה חינוכית וכיפית לקטנטנים" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ask The Kids" />
-  <meta property="og:title" content="הילד שלך כבר יודע את התשובה?" />
-  <meta property="og:description" content="טריוויה חינוכית וכיפית לקטנטנים" />
-  <meta property="og:url" content="https://rotem-ya.github.io/apps-share-pages/askthekids/he/view-he3.html" />
-  <meta property="og:image" content="https://rotem-ya.github.io/apps-share-pages/assets/preview-icon.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="הילד שלך כבר יודע את התשובה?" />
-  <meta name="twitter:description" content="טריוויה חינוכית וכיפית לקטנטנים" />
-  <meta name="twitter:image" content="https://rotem-ya.github.io/apps-share-pages/assets/preview-icon.jpg" />
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;overflow:hidden;font-family:Arial,"Noto Sans Hebrew",sans-serif;color:#16324f;background:linear-gradient(135deg,#fff7e8 0%,#eef6ff 100%)}
-    .container{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;gap:8px}
-    .icon{width:80px;height:80px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(30,136,229,.1);color:#1e88e5;font-weight:700;font-size:11px;margin-bottom:4px}
-    h1{font-size:24px;font-weight:900;line-height:1.2;text-align:center;margin-bottom:4px}
-    p{font-size:14px;color:#5d7287;line-height:1.3;text-align:center;margin-bottom:8px}
-    .buttons{display:flex;flex-direction:column;gap:8px;width:100%;max-width:360px}
-    .btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:12px;padding:12px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-    .btn svg{width:18px;height:18px;flex-shrink:0}
-    .btn-android{background:#34a853;color:#fff}
-    .btn-ios{background:#111;color:#fff}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>שאלו את הילדים - טריוויה מהנה לקטנטנים</title>
+    
+    <meta name="description" content="לומדים, משחקים ונהנים יחד. טריוויה חכמה ומהנה המותאמת במיוחד לילדים קטנים.">
+    <meta property="og:title" content="שאלו את הילדים - טריוויה מהנה לקטנטנים">
+    <meta property="og:description" content="לומדים, משחקים ונהנים יחד. הורידו עכשיו וגלו אפליקציה חינוכית וחכמה לילדים!">
+    <meta property="og:image" content="https://rotem-ya.github.io/apps-share-pages/assets/og-he-1200x630.jpg">
+    <meta property="og:image:secure_url" content="https://rotem-ya.github.io/apps-share-pages/assets/og-he-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://rotem-ya.github.io/apps-share-pages/askthekids/he/view-he3.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://rotem-ya.github.io/apps-share-pages/assets/og-he-1200x630.jpg">
+    <meta name="theme-color" content="#FFB300">
+
+    <style>
+        :root {
+            --primary-gold: #FFB300;
+            --primary-gold-dark: #FF9800;
+            --text-main: #001A4D;
+            --bg-body: #F9FAFB;
+            --bg-card: #FFFFFF;
+            --btn-android: #01875F;
+            --btn-android-hover: #016E4D;
+            --btn-apple: #1C1C1E;
+            --btn-apple-hover: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--bg-card);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 200px;
+            background-color: var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .main-content {
+            flex: 1;
+            background: var(--bg-card);
+            border-radius: 32px 32px 0 0;
+            margin-top: -40px;
+            padding: 0 24px 20px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            background-color: #FFF;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            margin-top: -45px;
+            margin-bottom: 16px;
+            border: 4px solid var(--bg-card);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #556;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF0C2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 6px;
+            box-shadow: 0 4px 12px rgba(255, 179, 0, 0.15);
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-gold-dark);
+        }
+
+        .feature-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .download-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .store-btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-google {
+            background: linear-gradient(135deg, var(--btn-android) 0%, var(--btn-android-hover) 100%);
+        }
+
+        .btn-apple {
+            background: linear-gradient(135deg, var(--btn-apple) 0%, var(--btn-apple-hover) 100%);
+        }
+
+        .btn-icon {
+            width: 28px;
+            height: 28px;
+            fill: white;
+            margin-left: 12px;
+        }
+
+        .btn-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: right;
+        }
+
+        .btn-main-text {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #889;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://rotem-ya.github.io/apps-share-pages/assets/preview-icon.jpg" alt="Ask The Kids" class="icon" />
-    <div class="badge">שאלו את הילדים</div>
-    <h1>הילד שלך כבר יודע<br>את התשובה?</h1>
-    <p>טריוויה חינוכית וכיפית לקטנטנים<br>לומדים, משחקים ונהנים יחד</p>
-    <div class="buttons">
-      <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=com.askthekids.series1">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.2 7.1 5.7 4.6l.8-.5L8 6.6c1.2-.6 2.6-.9 4-.9s2.8.3 4 .9l1.5-2.5.8.5-1.5 2.5c1.9 1.1 3.2 3 3.5 5.2H3.7c.3-2.2 1.6-4.1 3.5-5.2Zm3 .8a.8.8 0 1 0 0 1.6.8.8 0 0 0 0-1.6Zm3.6 0a.8.8 0 1 0 0 1.6.8.8 0 0 0 0-1.6ZM4.5 13.4H6v5.2c0 .8.7 1.4 1.5 1.4H9v2.1c0 .5.4.9.9.9s.9-.4.9-.9V20h2.4v2.1c0 .5.4.9.9.9s.9-.4.9-.9V20h1.5c.8 0 1.5-.6 1.5-1.4v-5.2h1.5v5.2c0 .9-.5 1.7-1.3 2.2a3 3 0 0 1-1.7.5h-.6v.9a1.9 1.9 0 0 1-3.7 0v-.9h-.6v.9a1.9 1.9 0 0 1-3.7 0v-.9h-.6a3 3 0 0 1-1.7-.5 2.6 2.6 0 0 1-1.3-2.2v-5.2Z"/></svg>
-        <span>Google Play לאנדרואיד</span>
-      </a>
-      <a class="btn btn-ios" href="https://apps.apple.com/app/id6759348204">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.8 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.5-2.5-1.7-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1 8.6.7 1 1.5 2.2 2.6 2.1 1 0 1.4-.6 2.6-.6s1.6.6 2.7.6c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.2 0 0-2-.8-2-3.7Zm-2-6.1c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.3Z"/></svg>
-        <span>App Store לאייפון</span>
-      </a>
+
+<div class="app-container">
+    
+    <div class="hero-banner">
+        <img src="https://rotem-ya.github.io/apps-share-pages/assets/og-he-1200x630.jpg" alt="שאלו את הילדים אווירה">
     </div>
-  </div>
+
+    <div class="main-content">
+        <img src="https://rotem-ya.github.io/apps-share-pages/assets/preview-icon.png" alt="לוגו אפליקציית שאלו את הילדים" class="app-icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTBFMEUwIi8+PC9zdmc+'">
+
+        <h1 class="title">שאלו את הילדים</h1>
+        <h2 class="subtitle">טריוויה מהנה לקטנטנים</h2>
+        <p class="description">לומדים, משחקים ונהנים יחד</p>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9L4 10.63V17C4 18.1 4.9 19 6 19H18C19.1 19 20 18.1 20 17V10.63L23 9L12 3ZM18 17H6V11.72L12 15L18 11.72V17Z"/></svg>
+                </div>
+                <span class="feature-text">חינוכי</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM8.5 11C9.33 11 10 10.33 10 9.5C10 8.67 9.33 8 8.5 8C7.67 8 7 8.67 7 9.5C7 10.33 7.67 11 8.5 11ZM15.5 11C16.33 11 17 10.33 17 9.5C17 8.67 16.33 8 15.5 8C14.67 8 14 8.67 14 9.5C14 10.33 14.67 11 15.5 11ZM11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"/></svg>
+                </div>
+                <span class="feature-text">מהנה</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"/></svg>
+                </div>
+                <span class="feature-text">לקטנטנים</span>
+            </div>
+        </div>
+
+        <div class="download-section">
+            
+            <a href="https://play.google.com/store/apps/details?id=com.askthekids.series1" class="store-btn btn-google" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                    <path d="M17.523 15.3414C17.523 15.3414 16.5362 17.0652 14.4651 17.0652C12.3941 17.0652 11.4586 15.3414 11.4586 15.3414M6.86699 15.3414C6.86699 15.3414 5.8802 17.0652 3.80916 17.0652C1.73812 17.0652 0.802612 15.3414 0.802612 15.3414M16.1438 8.04354L18.0645 4.71715C18.2616 4.37562 18.1434 3.93922 17.8018 3.74209C17.4603 3.54497 17.0239 3.66316 16.8268 4.0047L14.8624 7.40723C13.1906 6.64333 11.2642 6.64333 9.59239 7.40723L7.62804 4.0047C7.43091 3.66316 6.99451 3.54497 6.65298 3.74209C6.31145 3.93922 6.19326 4.37562 6.39038 4.71715L8.31102 8.04354C3.89673 10.4682 0.941913 14.9786 0.509888 20.3159H23.9449C23.5129 14.9786 20.5581 10.4682 16.1438 8.04354ZM6.64365 16.505C5.83445 16.505 5.17837 15.8489 5.17837 15.0397C5.17837 14.2305 5.83445 13.5744 6.64365 13.5744C7.45284 13.5744 8.10892 14.2305 8.10892 15.0397C8.10892 15.8489 7.45284 16.505 6.64365 16.505ZM17.8112 16.505C17.002 16.505 16.3459 15.8489 16.3459 15.0397C16.3459 14.2305 17.002 13.5744 17.8112 13.5744C18.6204 13.5744 19.2764 14.2305 19.2764 15.0397C19.2764 15.8489 18.6204 16.505 17.8112 16.505Z" />
+                </svg>
+                <div class="btn-content">
+                    <span class="btn-main-text">Google Play לאנדרואיד</span>
+                </div>
+            </a>
+
+            <a href="https://apps.apple.com/app/id6759348204" class="store-btn btn-apple" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                    <path d="M16.636 12.016c0-3.328 2.71-4.938 2.833-5.016-1.543-2.257-3.95-2.565-4.78-2.613-2.03-.205-3.968 1.196-4.996 1.196-1.03 0-2.632-1.163-4.305-1.13-2.188.033-4.204 1.272-5.32 3.21-2.26 3.916-.576 9.71 1.628 12.894 1.077 1.556 2.348 3.303 4.025 3.238 1.61-.066 2.222-1.042 4.17-1.042 1.948 0 2.502 1.042 4.195 1.01 1.742-.033 2.85-1.602 3.914-3.158 1.23-1.796 1.737-3.535 1.76-3.626-.038-.016-3.39-1.3-3.39-4.887l-.004-.08zm-2.868-8.232c.887-1.073 1.485-2.565 1.323-4.053-1.284.052-2.83 .854-3.743 1.956-.732.876-1.446 2.4-1.258 3.864 1.433.11 2.802-.68 3.678-1.767z" />
+                </svg>
+                <div class="btn-content">
+                    <span class="btn-main-text">App Store לאייפון</span>
+                </div>
+            </a>
+            
+        </div>
+
+        <footer>
+            &copy; שאלו את הילדים. כל הזכויות שמורות.
+        </footer>
+    </div>
+
+</div>
+
 </body>
 </html>
