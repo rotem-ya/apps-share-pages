@@ -3,118 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ask The Kids - Early Access</title>
-  <meta name="description" content="Ask The Kids - Sign Up for Early Access" />
+  <title>Ask The Kids English - Early Access</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff4e6, #ffe0b2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #fff8ef 0%, #ffe9c7 100%);
-      color: #2f2f2f;
+      height: 100vh;
       text-align: center;
-      padding: 24px;
     }
 
-    .card {
-      width: 100%;
-      max-width: 520px;
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 24px;
-      padding: 32px 24px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    .hero-image {
+    .container img {
       width: 100%;
-      max-width: 320px;
-      height: auto;
-      margin: 0 auto 20px;
-      display: block;
+      max-width: 250px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 2rem;
-      line-height: 1.2;
-      margin-bottom: 14px;
+      font-size: 32px;
       color: #ff8a00;
+      margin-bottom: 10px;
     }
 
-    .subtext {
-      font-size: 1.1rem;
-      line-height: 1.4;
-      margin-bottom: 26px;
-      color: #444;
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 25px;
     }
 
-    .cta-button {
+    .btn {
       display: inline-block;
+      padding: 15px 25px;
+      font-size: 16px;
+      color: white;
       background: #ff8a00;
-      color: #fff;
+      border-radius: 50px;
       text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 700;
-      padding: 16px 30px;
-      border-radius: 999px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-      box-shadow: 0 10px 24px rgba(255, 138, 0, 0.28);
+      font-weight: bold;
     }
 
-    .cta-button:hover {
-      background: #f07f00;
-      transform: translateY(-1px);
-    }
-
-    .cta-button:active {
-      transform: translateY(0);
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 26px 18px;
-      }
-
-      h1 {
-        font-size: 1.7rem;
-      }
-
-      .subtext {
-        font-size: 1rem;
-      }
-
-      .cta-button {
-        width: 100%;
-      }
+    .btn:hover {
+      background: #e67600;
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <img
-      class="hero-image"
-      src="https://raw.githubusercontent.com/rotem-ya/apps-share-pages/main/askthekids/en/tiger.png"
-      alt="Ask The Kids English"
-    />
+  <div class="container">
+    <img src="tiger.png" alt="Ask The Kids English">
 
     <h1>Sign Up for Early Access</h1>
-    <div class="subtext">Join now</div>
 
-    <a
-      class="cta-button"
-      href="https://forms.gle/SS6RFPYukKnjn5Ka9"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <p>Join now</p>
+
+    <a class="btn" href="https://forms.gle/SS6RFPYukKnjn5Ka9" target="_blank">
       Join now
     </a>
-  </main>
+  </div>
 </body>
 </html>
