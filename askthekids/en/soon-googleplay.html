@@ -1,76 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ask The Kids English - Early Access</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ask The Kids - Sign Up for Early Access</title>
+  <meta name="description" content="Sign Up for Early Access">
+  <meta property="og:title" content="Ask The Kids - Sign Up for Early Access">
+  <meta property="og:description" content="Join now.">
+  <meta property="og:image" content="https://rotem-ya.github.io/apps-share-pages/assets/og-en-1200x630.jpg">
+  <meta property="og:image:secure_url" content="https://rotem-ya.github.io/apps-share-pages/assets/og-en-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://rotem-ya.github.io/apps-share-pages/askthekids/en/soon-googleplay.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rotem-ya.github.io/apps-share-pages/assets/og-en-1200x630.jpg">
+  <meta name="theme-color" content="#FFB300">
   <style>
-    body {
+    :root {
+      --primary-gold: #FFB300;
+      --primary-gold-dark: #FF9800;
+      --text-main: #001A4D;
+      --bg-body: #F9FAFB;
+      --bg-card: #FFFFFF;
+    }
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #fff4e6, #ffe0b2);
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
       display: flex;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--bg-card);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner {
+      width: 100%;
+      height: 190px;
+      background-color: var(--primary-gold);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .main-content {
+      flex: 1;
+      background: var(--bg-card);
+      border-radius: 32px 32px 0 0;
+      margin-top: -34px;
+      padding: 22px 24px 28px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
-
-    .container {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .container img {
+    .title-block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
       width: 100%;
-      max-width: 250px;
-      margin-bottom: 20px;
+      justify-content: center;
     }
-
-    h1 {
-      font-size: 32px;
-      color: #ff8a00;
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background-color: #FFF;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 3px solid var(--bg-card);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .title-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+    }
+    .soon {
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--primary-gold-dark);
       margin-bottom: 10px;
     }
-
-    p {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 25px;
+    .description {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #556;
+      font-weight: 600;
+      max-width: 320px;
+      margin-bottom: 14px;
     }
-
-    .btn {
+    .note {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #7a8090;
+      max-width: 320px;
+      margin-bottom: 22px;
+    }
+    .cta-button {
       display: inline-block;
-      padding: 15px 25px;
-      font-size: 16px;
-      color: white;
-      background: #ff8a00;
-      border-radius: 50px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: var(--primary-gold-dark);
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: 0 8px 20px rgba(255, 152, 0, 0.28);
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
-
-    .btn:hover {
-      background: #e67600;
+    .cta-button:hover {
+      background: #f57c00;
+      transform: translateY(-1px);
+    }
+    .cta-button:active {
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="tiger.png" alt="Ask The Kids English">
-
-    <h1>Sign Up for Early Access</h1>
-
-    <p>Join now</p>
-
-    <a class="btn" href="https://forms.gle/SS6RFPYukKnjn5Ka9" target="_blank">
-      Join now
-    </a>
+  <div class="app-container">
+    <div class="hero-banner">
+      <img src="https://rotem-ya.github.io/apps-share-pages/assets/og-en-1200x630.jpg" alt="Ask The Kids English">
+    </div>
+    <div class="main-content">
+      <div class="title-block">
+        <img src="https://rotem-ya.github.io/apps-share-pages/assets/preview-icon.png" alt="Ask The Kids logo" class="app-icon">
+        <div class="title-text">
+          <div class="brand">Ask The Kids</div>
+        </div>
+      </div>
+      <div class="soon">Sign Up for Early Access</div>
+      <p class="description">Join now</p>
+      <p class="note">Join now</p>
+      <a class="cta-button" href="https://forms.gle/SS6RFPYukKnjn5Ka9" target="_blank" rel="noopener noreferrer">Join now</a>
+    </div>
   </div>
 </body>
 </html>
