@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#6366F1">
+<title>שאלו את הילדים 🎯 | טריוויה לילדים בעברית</title>
+<meta name="description" content="משחק טריוויה לילדים בגיל 2-5. חינם, בעברית, בלי פרסומות.">
+
+<meta property="og:title" content="שאלו את הילדים - טריוויה לילדים">
+<meta property="og:description" content="חינם • בעברית • בלי פרסומות • גיל 2-5">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&family=Varela+Round&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    min-height: 100vh;
+    font-family: 'Rubik', 'Varela Round', sans-serif;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: linear-gradient(160deg, #6366F1 0%, #8B5CF6 45%, #EC4899 100%);
+    background-attachment: fixed;
+    color: white;
+    padding: 30px 20px;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,217,61,0.3), transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236,72,153,0.3), transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header {
+    text-align: center;
+    padding: 20px 0 30px;
+    animation: fadeDown 0.7s ease;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .avatar-wrap {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 22px;
+    position: relative;
+  }
+
+  .avatar-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FB923C, #F97316);
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.9);
+    box-shadow:
+      0 15px 35px rgba(249,115,22,0.45),
+      0 0 0 5px rgba(255,255,255,0.15);
+  }
+
+  .avatar {
+    position: absolute;
+    inset: -25px -10px -20px -10px;
+    background-image: url('https://rotem-ya.github.io/apps-share-pages/askthekids/tiger.png');
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+  }
+
+  .app-name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    letter-spacing: -0.5px;
+  }
+
+  .tagline {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 19px;
+    opacity: 0.95;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    padding: 9px 18px;
+    border-radius: 100px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* Main CTA */
+  .download-title {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 35px 0 18px;
+    color: #FFD93D;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+
+  .store-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .store-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    color: #1a0a2e;
+    padding: 18px 22px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    box-shadow:
+      0 6px 0 rgba(0,0,0,0.25),
+      0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.15s ease;
+    animation: fadeUp 0.6s ease backwards;
+  }
+
+  .store-btn:nth-child(1) { animation-delay: 0.1s; }
+  .store-btn:nth-child(2) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .store-btn:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 3px 0 rgba(0,0,0,0.25),
+      0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .store-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
+  }
+
+  .store-icon.apple {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: white;
+  }
+
+  .store-icon.google {
+    background: linear-gradient(135deg, #34D399, #10B981);
+    color: white;
+  }
+
+  .store-text { flex: 1; }
+
+  .store-main {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 2px;
+  }
+
+  .store-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+
+  .store-arrow {
+    font-size: 24px;
+    color: #9CA3AF;
+    font-weight: 900;
+  }
+
+  /* Info card */
+  .info-card {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+    animation: fadeUp 0.6s ease 0.3s backwards;
+  }
+
+  .info-title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: #FFD93D;
+  }
+
+  .info-list {
+    list-style: none;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .info-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #FFD93D;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .stat-lbl {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+
+  /* Language switcher */
+  .lang-switch {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .lang-btn:hover,
+  .lang-btn:active {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .footer-hearts {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+
+  .float-star {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: floaty 4s ease-in-out infinite;
+  }
+  .s1 { top: 60px; left: 15px; }
+  .s2 { top: 200px; right: 10px; animation-delay: 1s; }
+  .s3 { top: 500px; left: 20px; animation-delay: 2s; }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
+  }
+
+  @media (max-width: 380px) {
+    .app-name { font-size: 30px; }
+    .store-main { font-size: 18px; }
+    .store-btn { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="float-star s1">✨</div>
+<div class="float-star s2">⭐</div>
+<div class="float-star s3">✨</div>
+
+<div class="container">
+
+  <header class="header">
+    <div class="avatar-wrap">
+      <div class="avatar-bg"></div>
+      <div class="avatar"></div>
+    </div>
+    <h1 class="app-name">שאלו את הילדים 🎯</h1>
+    <p class="tagline">משחק טריוויה לילדים בגיל 2-5<br>לומדים תוך כדי כיף 🎉</p>
+
+    <div class="features">
+      <span class="pill">🎉 חינם</span>
+      <span class="pill">🚫 בלי פרסומות</span>
+      <span class="pill">✈️ עובד offline</span>
+    </div>
+  </header>
+
+  <div class="download-title">👇 הורידו עכשיו</div>
+
+  <div class="store-links">
+
+    <a class="store-btn" href="https://apps.apple.com/app/id6759348204" target="_blank" rel="noopener">
+      <div class="store-icon apple">🍎</div>
+      <div class="store-text">
+        <div class="store-main">App Store</div>
+        <div class="store-sub">לאייפון ואייפד</div>
+      </div>
+      <div class="store-arrow">‹</div>
+    </a>
+
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.askthekids.series1" target="_blank" rel="noopener">
+      <div class="store-icon google">▶</div>
+      <div class="store-text">
+        <div class="store-main">Google Play</div>
+        <div class="store-sub">לאנדרואיד</div>
+      </div>
+      <div class="store-arrow">‹</div>
+    </a>
+
+  </div>
+
+  <div class="info-card">
+    <div class="info-title">✨ מה יש במשחק?</div>
+    <ul class="info-list">
+      <li>🐯 4 דמויות חמודות לבחירה</li>
+      <li>📚 6 נושאים מגוונים</li>
+      <li>🎯 מותאם לגילאים 2, 3, 4, 5</li>
+      <li>🏆 מערכת הישגים וניצחונות</li>
+    </ul>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">+360</div>
+        <div class="stat-lbl">שאלות</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-lbl">נושאים</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">גילאים</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">פרסומות</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lang-switch">
+    <a class="lang-btn" href="bio-en.html">
+      🇺🇸 English version
+    </a>
+  </div>
+
+  <div class="footer">
+    מפותח באהבה בישראל 🇮🇱
+    <div class="footer-hearts">❤️ by Rotem</div>
+  </div>
+
+</div>
+
+</body>
+</html>
