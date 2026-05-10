@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מה בתמונה? — הצטרף לחדר</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: linear-gradient(160deg, #07101F 0%, #050A14 100%); min-height: 100dvh; font-family: -apple-system, 'Segoe UI', sans-serif; color: #fff; display: flex; align-items: center; justify-content: center; padding: 24px 20px; }
+    .card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 28px; padding: 36px 28px 32px; max-width: 380px; width: 100%; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .icon { font-size: 52px; margin-bottom: 12px; }
+    h1 { font-size: 26px; font-weight: 900; color: #D4AF37; margin-bottom: 6px; }
+    .subtitle { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 28px; }
+    .code-label { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 8px; letter-spacing: 1px; }
+    .code-box { background: rgba(135,206,235,0.10); border: 1.5px solid rgba(135,206,235,0.35); border-radius: 16px; padding: 18px 12px; margin-bottom: 20px; }
+    .code { font-size: 48px; font-weight: 900; letter-spacing: 10px; color: #87CEEB; text-shadow: 0 0 20px rgba(135,206,235,0.6); }
+    .error { font-size: 18px; color: rgba(255,255,255,0.5); padding: 24px 0; }
+    .copy-btn { width: 100%; padding: 16px; background: linear-gradient(180deg, #FFE082, #D4AF37, #A1811A); border: none; border-radius: 999px; font-size: 18px; font-weight: 900; color: #07101F; cursor: pointer; margin-bottom: 16px; }
+    .copy-btn.copied { background: linear-gradient(180deg, #81C784, #388E3C); color: #fff; }
+    .helper { font-size: 14px; color: rgba(255,255,255,0.40); line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">📸</div>
+    <h1>מה בתמונה?</h1>
+    <p class="subtitle">הוזמנת להצטרף לחדר</p>
+    <div id="content"></div>
+    <p class="helper">פתח את האפליקציה והזן את הקוד</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const code = (params.get('code') || '').trim().toUpperCase();
+    const el = document.getElementById('content');
+    if (!code) {
+      el.innerHTML = '<p class="error">לא נמצא קוד חדר</p>';
+    } else {
+      el.innerHTML = '<p class="code-label">קוד חדר</p><div class="code-box"><div class="code">' + code + '</div></div><button class="copy-btn" id="copyBtn" onclick="copyCode()">העתק קוד</button>';
+    }
+    function copyCode() {
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✓ הקוד הועתק';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'העתק קוד'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
