@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>WhoIsThere - הצטרפות לחדר</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #ffffff;
+      background: linear-gradient(180deg, #07101f 0%, #0a2c5f 58%, #007e99 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .card {
+      width: 100%;
+      padding: 34px 24px 26px;
+      text-align: center;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.68);
+      margin-bottom: 26px;
+    }
+
+    .code-box {
+      margin-bottom: 22px;
+      padding: 18px 14px 15px;
+      border-radius: 20px;
+      background: rgba(0, 242, 255, 0.08);
+      border: 1.5px solid rgba(0, 242, 255, 0.52);
+    }
+
+    .code-label {
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.58);
+      letter-spacing: 0.4px;
+    }
+
+    .code-value {
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-size: clamp(34px, 12vw, 46px);
+      font-weight: 900;
+      letter-spacing: clamp(4px, 1.7vw, 8px);
+      color: #00f2ff;
+      line-height: 1;
+      text-shadow: 0 0 24px rgba(0, 242, 255, 0.55);
+      overflow-wrap: anywhere;
+    }
+
+    .button {
+      width: 100%;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 10px;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 18px;
+      font: inherit;
+      font-size: 17px;
+      font-weight: 850;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+      opacity: 0.78;
+    }
+
+    .button-open {
+      color: #07101f;
+      background: linear-gradient(180deg, #fff176 0%, #ffe14d 55%, #e3bd18 100%);
+      box-shadow: 0 8px 22px rgba(255, 225, 77, 0.35);
+    }
+
+    .button-copy {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .button-copy.copied {
+      color: #86efac;
+      border-color: rgba(134, 239, 172, 0.72);
+    }
+
+    .fallback {
+      margin-top: 18px;
+      padding: 16px;
+      text-align: right;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .fallback strong {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .fallback ol {
+      margin-top: 8px;
+      padding-right: 18px;
+    }
+
+    .fallback li {
+      margin-bottom: 4px;
+    }
+
+    .invalid-message {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.22);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.34);
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="card" aria-label="הצטרפות לחדר">
+      <div class="logo" aria-hidden="true">🎮</div>
+      <h1>WhoIsThere</h1>
+      <p class="subtitle">הוזמנת להצטרף למשחק</p>
+
+      <div id="validState" class="hidden">
+        <div class="code-box">
+          <div class="code-label">קוד החדר</div>
+          <div id="codeDisplay" class="code-value">------</div>
+        </div>
+
+        <a id="openBtn" class="button button-open" href="#" rel="noopener">
+          <span aria-hidden="true">📱</span>
+          <span>פתח באפליקציה</span>
+        </a>
+
+        <button id="copyBtn" class="button button-copy" type="button" onclick="copyCode()">
+          <span id="copyIcon" aria-hidden="true">📋</span>
+          <span id="copyText">העתק קוד</span>
+        </button>
+
+        <div class="fallback">
+          <strong>האפליקציה לא נפתחה?</strong>
+          <ol>
+            <li>ודא שהמשחק מותקן במכשיר.</li>
+            <li>פתח את האפליקציה.</li>
+            <li>לחץ על "הצטרף עם קוד" והזן את הקוד שמופיע למעלה.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="invalidState" class="invalid-message hidden">
+        לא נמצא קוד חדר תקין בקישור.<br>
+        בקש מהמארח לשלוח קישור חדש.
+      </div>
+    </section>
+
+    <div class="footer">WhoIsThere © 2026</div>
+  </main>
+
+  <script>
+    (function initJoinPage() {
+      var params = new URLSearchParams(window.location.search);
+      var rawCode = params.get('code') || '';
+      var code = rawCode.trim().toUpperCase();
+      var isValid = /^[A-Z0-9]{6}$/.test(code);
+
+      if (!isValid) {
+        document.getElementById('invalidState').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('codeDisplay').textContent = code;
+      document.getElementById('openBtn').setAttribute('href', 'whoisthere://join?code=' + encodeURIComponent(code));
+      document.getElementById('validState').classList.remove('hidden');
+    })();
+
+    function copyCode() {
+      var code = document.getElementById('codeDisplay').textContent;
+      var button = document.getElementById('copyBtn');
+      var icon = document.getElementById('copyIcon');
+      var text = document.getElementById('copyText');
+
+      function markCopied() {
+        button.classList.add('copied');
+        icon.textContent = '✅';
+        text.textContent = 'הועתק!';
+
+        window.setTimeout(function resetCopyButton() {
+          button.classList.remove('copied');
+          icon.textContent = '📋';
+          text.textContent = 'העתק קוד';
+        }, 2000);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(markCopied).catch(function () {
+          legacyCopy(code, markCopied);
+        });
+      } else {
+        legacyCopy(code, markCopied);
+      }
+    }
+
+    function legacyCopy(value, callback) {
+      var textarea = document.createElement('textarea');
+      textarea.value = value;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '0';
+      textarea.style.left = '0';
+      textarea.style.opacity = '0';
+      textarea.style.pointerEvents = 'none';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      try {
+        document.execCommand('copy');
+      } catch (error) {
+        // Ignore copy errors. The visible room code remains available.
+      }
+
+      document.body.removeChild(textarea);
+      callback();
+    }
+  </script>
+</body>
+</html>
