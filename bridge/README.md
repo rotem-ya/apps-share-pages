@@ -24,7 +24,14 @@
 | `[GROK-STUDIO]` | גרוק, הפקת סרטונים | `whoisthere/studio/` |
 | `[GPT-OPS]` | GPT, רשתות ופרסום | `whoisthere/ops/` |
 
-**קרא קודם את `INSTRUCTIONS.md` בתיקייה שלך.** שם ההוראות הקבועות, והמשימות הפתוחות כתובות בראש הקובץ.
+**קרא קודם את `INSTRUCTIONS.md` שלך, בקישור הישיר** (סוכן שלא מנווט בתיקיות בגיטהאב פותח את הקישור כמו שהוא):
+- `[GEMINI-IMAGES]`: https://raw.githubusercontent.com/rotem-ya/apps-share-pages/main/bridge/whoisthere/gemini/INSTRUCTIONS.md
+- `[GROK-STUDIO]`: https://raw.githubusercontent.com/rotem-ya/apps-share-pages/main/bridge/whoisthere/studio/INSTRUCTIONS.md
+- `[GPT-OPS]`: https://raw.githubusercontent.com/rotem-ya/apps-share-pages/main/bridge/whoisthere/ops/INSTRUCTIONS.md
+
+המשימות הפתוחות כתובות בראש הקובץ. בכל קובץ שמוזכר שם יש קישור ישיר.
+
+🔴 **"מה בתמונה?" אינה האטלס המקראי.** אל תשתמש בשום הנחיה, מחברת או סגנון מפרויקט האטלס.
 
 ## איך מחזירים עבודה
 אין לך הרשאת כתיבה כאן. אתה מוסר בשתי דרכים בלבד:
